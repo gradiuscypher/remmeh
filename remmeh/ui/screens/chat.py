@@ -33,8 +33,6 @@ class ChatScreen(Screen[None]):
     CSS_PATH = "../remmeh.tcss"
 
     BINDINGS = [
-        Binding("ctrl+q", "quit", "Quit", priority=True),
-        Binding("ctrl+c", "quit", "Quit", priority=True, show=False),
         Binding("escape", "cancel_stream", "Cancel", show=False),
         Binding("ctrl+m", "switch_model", "Model", show=True),
     ]

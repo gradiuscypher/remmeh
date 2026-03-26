@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from textual.app import ComposeResult
 from textual.binding import Binding
+from textual.containers import Vertical
 from textual.screen import ModalScreen
 from textual.widgets import Input, Label
 
@@ -46,7 +47,7 @@ class ModelInputScreen(ModalScreen[str | None]):
 
     def compose(self) -> ComposeResult:
         """Build the modal layout."""
-        with __import__("textual.containers", fromlist=["Vertical"]).Vertical(id="dialog"):
+        with Vertical(id="dialog"):
             yield Label("Enter model (e.g. anthropic/claude-3.5-sonnet):", id="label")
             yield Input(value=self._current_model, id="model-input")
 
