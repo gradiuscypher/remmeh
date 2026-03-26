@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-foundation-core-chat-01-PLAN.md
-last_updated: "2026-03-26T03:07:07.465Z"
+stopped_at: Completed 01-foundation-core-chat-02-PLAN.md
+last_updated: "2026-03-26T03:13:05.314Z"
 last_activity: 2026-03-26
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 6
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-03-26)
 ## Current Position
 
 Phase: 01 (Foundation & Core Chat) — EXECUTING
-Plan: 2 of 6
+Plan: 3 of 6
 Status: Ready to execute
 Last activity: 2026-03-26
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-foundation-core-chat P01 | 173 | 2 tasks | 11 files |
+| Phase 01-foundation-core-chat P02 | 222 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -65,6 +66,8 @@ Recent decisions affecting current work:
 - [Init]: All 10 async/storage pitfalls are Phase 1 concerns — foundation must be correct before features
 - [Phase 01-foundation-core-chat]: Used tool.uv.package=true instead of hatchling build-system — simpler and avoids build-time dependency on package dir existing
 - [Phase 01-foundation-core-chat]: Did not add openrouter SDK — raw httpx handles OpenRouter HTTP calls (OpenAI-compatible API)
+- [Phase 01-foundation-core-chat]: Used connection-per-call pattern for aiosqlite — connection pooling is Phase 2+
+- [Phase 01-foundation-core-chat]: list_sessions() omits messages for performance — callers use get_session() to load messages
 
 ### Pending Todos
 
@@ -79,6 +82,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-26T03:07:07.460Z
-Stopped at: Completed 01-foundation-core-chat-01-PLAN.md
+Last session: 2026-03-26T03:13:05.309Z
+Stopped at: Completed 01-foundation-core-chat-02-PLAN.md
 Resume file: None
