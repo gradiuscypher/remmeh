@@ -221,24 +221,6 @@ async def test_stream_chat_timeout_raises_timeout_error(client: OpenRouterClient
     mock_stream_ctx.__aexit__ = AsyncMock(return_value=False)
     mock_http_client.stream = MagicMock(return_value=mock_stream_ctx)
 
-    mock_client_ctx = MagicMock()
-    mock_client_ctx.__aenter__ = AsyncMock(return_value=mock_http_client)
-    mock_client_ctx.__aexit__ = AsyncMock(return_value=False)
-    mocker.patch("httpx.AsyncClient", return_value=mock_client_ctx)
-
-    with pytest.raises(TimeoutError):
-        await _collect_tokens(client, MESSAGES, MODEL)
-
-
-@pytest.mark.asyncio
-async def test_stream_chat_timeout_raises_timeout_error(client: OpenRouterClient, mocker) -> None:
-    """httpx.TimeoutException raises TimeoutError."""
-    mock_http_client = MagicMock()
-    mock_stream_ctx = MagicMock()
-    mock_stream_ctx.__aenter__ = AsyncMock(side_effect=httpx.TimeoutException("timed out"))
-    mock_stream_ctx.__aexit__ = AsyncMock(return_value=False)
-    mock_http_client.stream = MagicMock(return_value=mock_stream_ctx)
-
     mock_client_instance = MagicMock()
     mock_client_instance.__aenter__ = AsyncMock(return_value=mock_http_client)
     mock_client_instance.__aexit__ = AsyncMock(return_value=False)
