@@ -30,3 +30,6 @@ a tui LLM chat and research tool
 - Split conversations into new conversations with different agents
 - Edit previous messages by the user or the agent to modify the outcome
 - Compare two conversations via LLM to understand them
+
+# Phase 5 - Cost summary, running stats
+- Include cost summary and interesting stats (token use, breakdown by model, etc)
