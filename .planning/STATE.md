@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-foundation-core-chat-02-PLAN.md
-last_updated: "2026-03-26T03:13:05.314Z"
+stopped_at: Completed 01-foundation-core-chat-03-PLAN.md
+last_updated: "2026-03-26T03:14:34.461Z"
 last_activity: 2026-03-26
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 6
-  completed_plans: 2
+  completed_plans: 4
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-03-26)
 ## Current Position
 
 Phase: 01 (Foundation & Core Chat) — EXECUTING
-Plan: 3 of 6
+Plan: 5 of 6
 Status: Ready to execute
 Last activity: 2026-03-26
 
@@ -54,6 +54,8 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-foundation-core-chat P01 | 173 | 2 tasks | 11 files |
 | Phase 01-foundation-core-chat P02 | 222 | 2 tasks | 6 files |
+| Phase 01-foundation-core-chat P04 | 259 | 2 tasks | 9 files |
+| Phase 01-foundation-core-chat P03 | 270 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -68,6 +70,10 @@ Recent decisions affecting current work:
 - [Phase 01-foundation-core-chat]: Did not add openrouter SDK — raw httpx handles OpenRouter HTTP calls (OpenAI-compatible API)
 - [Phase 01-foundation-core-chat]: Used connection-per-call pattern for aiosqlite — connection pooling is Phase 2+
 - [Phase 01-foundation-core-chat]: list_sessions() omits messages for performance — callers use get_session() to load messages
+- [Phase 01-foundation-core-chat]: VerticalScroll is in textual.containers (not textual.widgets) in Textual 1.x
+- [Phase 01-foundation-core-chat]: Widget __init__ must use typed params (not *args/**kwargs) for ty compatibility
+- [Phase 01-foundation-core-chat]: StatusBar helper method named _build_content (not _render) — _render is reserved by Widget with incompatible signature
+- [Phase 01-foundation-core-chat]: Used nested async with (noqa SIM117) for httpx stream — inner context depends on outer's yielded value; flat form would sever dependency
 
 ### Pending Todos
 
@@ -82,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-26T03:13:05.309Z
-Stopped at: Completed 01-foundation-core-chat-02-PLAN.md
+Last session: 2026-03-26T03:14:34.456Z
+Stopped at: Completed 01-foundation-core-chat-03-PLAN.md
 Resume file: None

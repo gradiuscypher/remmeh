@@ -10,7 +10,7 @@
 - [ ] **CHAT-01**: User can type a message and receive a streamed LLM response token-by-token via OpenRouter
 - [ ] **CHAT-02**: LLM responses are rendered with full Markdown formatting (headers, lists, inline code, blockquotes, tables)
 - [ ] **CHAT-03**: Code blocks in responses are syntax-highlighted with language detection from fenced-code hints
-- [ ] **CHAT-04**: User can enter multi-line messages (3-line input panel, Enter=submit, Shift+Enter=newline) with scroll support
+- [x] **CHAT-04**: User can enter multi-line messages (3-line input panel, Enter=submit, Shift+Enter=newline) with scroll support
 - [x] **CHAT-05**: API errors, rate limits, and timeouts are displayed inline in the chat thread — app does not crash
 - [x] **CHAT-06**: OpenRouter API key is loaded from a `.env` file at startup
 
@@ -32,11 +32,11 @@
 
 ### UI Layout
 
-- [ ] **UI-01**: Primary layout has a bottom input panel (3-line height, scrollable) and a main chat view
+- [x] **UI-01**: Primary layout has a bottom input panel (3-line height, scrollable) and a main chat view
 - [ ] **UI-02**: Command palette (Ctrl+P) provides access to all app actions: model switch, new session, navigate sessions, settings
 - [ ] **UI-03**: Extended thinking blocks from supported models (e.g. Claude 3.7+) are stored in session and displayed as a distinct collapsible section in the chat view
 - [ ] **UI-04**: User can rebind common hotkeys (model switch, new session, sidebar toggle) via a config file
-- [ ] **UI-05**: Current model name is always visible in the UI (status bar or header)
+- [x] **UI-05**: Current model name is always visible in the UI (status bar or header)
 
 ## v2 Requirements
 
@@ -75,7 +75,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CHAT-01 | Phase 1 | Pending |
 | CHAT-02 | Phase 1 | Pending |
 | CHAT-03 | Phase 1 | Pending |
-| CHAT-04 | Phase 1 | Pending |
+| CHAT-04 | Phase 1 | Complete |
 | CHAT-05 | Phase 1 | Complete |
 | CHAT-06 | Phase 1 | Complete |
 | MODL-01 | Phase 2 | Pending |
@@ -88,11 +88,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SESS-04 | Phase 2 | Pending |
 | SESS-05 | Phase 4 | Pending |
 | SESS-06 | Phase 4 | Pending |
-| UI-01 | Phase 1 | Pending |
+| UI-01 | Phase 1 | Complete |
 | UI-02 | Phase 3 | Pending |
 | UI-03 | Phase 3 | Pending |
 | UI-04 | Phase 3 | Pending |
-| UI-05 | Phase 1 | Pending |
+| UI-05 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 21 total
