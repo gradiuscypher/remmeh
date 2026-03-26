@@ -8,8 +8,8 @@
 ### Core Chat
 
 - [x] **CHAT-01**: User can type a message and receive a streamed LLM response token-by-token via OpenRouter
-- [ ] **CHAT-02**: LLM responses are rendered with full Markdown formatting (headers, lists, inline code, blockquotes, tables)
-- [ ] **CHAT-03**: Code blocks in responses are syntax-highlighted with language detection from fenced-code hints
+- [x] **CHAT-02**: LLM responses are rendered with full Markdown formatting (headers, lists, inline code, blockquotes, tables)
+- [x] **CHAT-03**: Code blocks in responses are syntax-highlighted with language detection from fenced-code hints
 - [x] **CHAT-04**: User can enter multi-line messages (3-line input panel, Enter=submit, Shift+Enter=newline) with scroll support
 - [x] **CHAT-05**: API errors, rate limits, and timeouts are displayed inline in the chat thread — app does not crash
 - [x] **CHAT-06**: OpenRouter API key is loaded from a `.env` file at startup
@@ -73,8 +73,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | CHAT-01 | Phase 1 | Complete |
-| CHAT-02 | Phase 1 | Pending |
-| CHAT-03 | Phase 1 | Pending |
+| CHAT-02 | Phase 1 | Complete |
+| CHAT-03 | Phase 1 | Complete |
 | CHAT-04 | Phase 1 | Complete |
 | CHAT-05 | Phase 1 | Complete |
 | CHAT-06 | Phase 1 | Complete |
