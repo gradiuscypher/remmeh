@@ -89,15 +89,18 @@ class MessageWidget(Widget):
     def write_chunk(self, chunk: str) -> None:
         """Append a streaming token to the RichLog.
 
-        Called per token during streaming. Writes to the RichLog with no end
-        separator so chunks are concatenated visually.
+        Called per token during streaming. Accumulates content and rewrites
+        the RichLog in full to avoid per-token line fragmentation.
 
         Args:
             chunk: A single text token from the LLM stream.
         """
-        if self._rich_log is not None:
-            self._rich_log.write(chunk, end="")
         self._content += chunk
+        if self._rich_log is not None:
+            # clear() + write() with full accumulated content avoids scroll-reset
+            # jitter caused by per-token line fragmentation (no 'end' param on write).
+            self._rich_log.clear()
+            self._rich_log.write(self._content)
 
     def swap_to_markdown(self) -> None:
         """Replace the RichLog with a Markdown widget on stream completion.
