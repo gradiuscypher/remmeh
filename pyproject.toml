@@ -1,7 +1,49 @@
 [project]
 name = "remmeh"
 version = "0.1.0"
-description = "Add your description here"
+description = "A keyboard-first TUI LLM chat tool powered by OpenRouter"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "textual>=1.0",
+    "httpx[http2]>=0.27",
+    "python-dotenv>=1.0",
+    "aiosqlite>=0.20",
+]
+
+[project.scripts]
+remmeh = "remmeh.main:main"
+
+[tool.uv]
+package = true
+
+[dependency-groups]
+dev = [
+    "ruff>=0.4",
+    "ty>=0.0.25",
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "pytest-mock>=3.14",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ty]
+# ty is early-stage; strict mode off for Phase 1
+
+[tool.coverage.run]
+source = ["remmeh"]
+omit = ["tests/*"]
