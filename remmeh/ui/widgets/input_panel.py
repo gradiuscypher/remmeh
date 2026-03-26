@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import contextlib
+
 from textual.app import ComposeResult
 from textual.events import Key
 from textual.message import Message as TextualMessage
@@ -20,6 +22,16 @@ class InputPanel(Widget):
             self.text = text
             super().__init__()
 
+    def __init__(
+        self,
+        name: str | None = None,
+        id: str | None = None,
+        classes: str | None = None,
+        disabled: bool = False,
+    ) -> None:
+        """Initialize the input panel."""
+        super().__init__(name=name, id=id, classes=classes, disabled=disabled)
+
     def compose(self) -> ComposeResult:
         """Build the input panel widget tree."""
         yield TextArea(
@@ -32,10 +44,8 @@ class InputPanel(Widget):
         text_area = self.query_one("#input-area", TextArea)
         text_area.show_line_numbers = False
         # Set placeholder text via the TextArea attribute if available
-        try:
+        with contextlib.suppress(AttributeError):
             text_area.placeholder = "Message… (Enter to send, Shift+Enter for newline)"  # type: ignore[attr-defined]
-        except AttributeError:
-            pass  # Older Textual versions may not support placeholder
 
     def on_key(self, event: Key) -> None:
         """Handle Enter key to submit, Shift+Enter to insert newline."""

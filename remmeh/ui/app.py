@@ -2,18 +2,17 @@
 
 from __future__ import annotations
 
-from textual.app import App, ComposeResult
-from textual.widgets import Footer, Header, Label
+from textual.app import App
+
+from remmeh.ui.screens.chat import ChatScreen
 
 
 class RemmehApp(App[None]):
-    """Keyboard-first TUI LLM chat application."""
+    """remmeh — keyboard-first TUI LLM chat."""
 
     TITLE = "remmeh"
-    SUB_TITLE = "keyboard-first LLM chat"
+    SCREENS = {"chat": ChatScreen}
 
-    def compose(self) -> ComposeResult:
-        """Build the initial widget tree."""
-        yield Header()
-        yield Label("Welcome to remmeh — press Ctrl+C to quit.")
-        yield Footer()
+    def on_mount(self) -> None:
+        """Push the chat screen on startup."""
+        self.push_screen("chat")

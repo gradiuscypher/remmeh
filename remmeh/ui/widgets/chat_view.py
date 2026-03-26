@@ -11,9 +11,15 @@ from textual.widgets import Static
 class ChatView(VerticalScroll):
     """Scrollable chat thread container. Mounts MessageWidget instances."""
 
-    def __init__(self, *args: object, **kwargs: object) -> None:
+    def __init__(
+        self,
+        name: str | None = None,
+        id: str | None = None,
+        classes: str | None = None,
+        disabled: bool = False,
+    ) -> None:
         """Initialize the chat view with empty state tracking."""
-        super().__init__(*args, **kwargs)  # type: ignore[arg-type]
+        super().__init__(name=name, id=id, classes=classes, disabled=disabled)
         self._has_messages: bool = False
 
     def compose(self) -> ComposeResult:
