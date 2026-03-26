@@ -138,6 +138,10 @@ class ChatScreen(Screen[None]):
         assistant_widget = MessageWidget(role="assistant")
         self._current_assistant_widget = assistant_widget
         chat_view.add_message_widget(assistant_widget)
+        # Yield control so Textual can run compose() on the assistant widget
+        # before we start writing chunks. Without this, swap_to_markdown() is
+        # called before _rich_log is set by compose(), causing a silent no-op.
+        await asyncio.sleep(0)
 
         # --- Stream tokens from OpenRouter ---
         full_response = ""
