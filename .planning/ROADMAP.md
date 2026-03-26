@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. The current model name is visible in the status bar; the app loads the OpenRouter API key from `.env` at startup
 **Plans**: 6 plans
 Plans:
-- [ ] 01-01-PLAN.md — Project scaffold: pyproject.toml, package structure, ruff/ty/pytest config
+- [x] 01-01-PLAN.md — Project scaffold: pyproject.toml, package structure, ruff/ty/pytest config
 - [ ] 01-02-PLAN.md — Data models + async SQLite storage with WAL mode
 - [ ] 01-03-PLAN.md — App config + async OpenRouter streaming client with error classification
 - [ ] 01-04-PLAN.md — TUI layout skeleton: RemmehApp, ChatScreen, StatusBar, ChatView, InputPanel
@@ -79,7 +79,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Core Chat | 0/? | Not started | - |
+| 1. Foundation & Core Chat | 1/6 | In Progress|  |
 | 2. Model Selection & Sessions | 0/? | Not started | - |
 | 3. Command Palette & Thinking Blocks | 0/? | Not started | - |
 | 4. Session Organization & Discovery | 0/? | Not started | - |

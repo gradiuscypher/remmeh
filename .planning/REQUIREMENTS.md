@@ -12,7 +12,7 @@
 - [ ] **CHAT-03**: Code blocks in responses are syntax-highlighted with language detection from fenced-code hints
 - [ ] **CHAT-04**: User can enter multi-line messages (3-line input panel, Enter=submit, Shift+Enter=newline) with scroll support
 - [ ] **CHAT-05**: API errors, rate limits, and timeouts are displayed inline in the chat thread — app does not crash
-- [ ] **CHAT-06**: OpenRouter API key is loaded from a `.env` file at startup
+- [x] **CHAT-06**: OpenRouter API key is loaded from a `.env` file at startup
 
 ### Models
 
@@ -77,7 +77,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CHAT-03 | Phase 1 | Pending |
 | CHAT-04 | Phase 1 | Pending |
 | CHAT-05 | Phase 1 | Pending |
-| CHAT-06 | Phase 1 | Pending |
+| CHAT-06 | Phase 1 | Complete |
 | MODL-01 | Phase 2 | Pending |
 | MODL-02 | Phase 2 | Pending |
 | MODL-03 | Phase 2 | Pending |
