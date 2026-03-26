@@ -20,6 +20,7 @@ from remmeh.api.openrouter import (
 from remmeh.config import DEFAULT_MODEL, load_config
 from remmeh.models import ChatSession, Message
 from remmeh.storage import append_message, create_session, init_db
+from remmeh.ui.screens.model_input import ModelInputScreen
 from remmeh.ui.widgets.chat_view import ChatView
 from remmeh.ui.widgets.input_panel import InputPanel
 from remmeh.ui.widgets.message_widget import MessageWidget
@@ -35,6 +36,7 @@ class ChatScreen(Screen[None]):
         Binding("ctrl+q", "quit", "Quit", priority=True),
         Binding("ctrl+c", "quit", "Quit", priority=True, show=False),
         Binding("escape", "cancel_stream", "Cancel", show=False),
+        Binding("ctrl+m", "switch_model", "Model", show=True),
     ]
 
     def __init__(self) -> None:
@@ -212,3 +214,25 @@ class ChatScreen(Screen[None]):
         for worker in self.workers:
             if worker.is_running:
                 worker.cancel()
+
+    def action_switch_model(self) -> None:
+        """Open the model input modal (Ctrl+M)."""
+        current = self._config.model if self._config else DEFAULT_MODEL
+
+        def _on_model_selected(new_model: str | None) -> None:
+            if new_model and new_model != current:
+                # Update config and client with the new model
+                if self._config is None:
+                    try:
+                        self._config = load_config()
+                    except ValueError:
+                        return
+                self._config = self._config.__class__(
+                    api_key=self._config.api_key,
+                    model=new_model,
+                    db_path=self._config.db_path,
+                )
+                self._client = OpenRouterClient(api_key=self._config.api_key)
+                self.query_one("#status-bar", StatusBar).update_model(new_model)
+
+        self.app.push_screen(ModelInputScreen(current), _on_model_selected)
