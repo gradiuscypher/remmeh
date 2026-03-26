@@ -1,0 +1,46 @@
+/* Root screen layout */
+ChatScreen {
+    layout: vertical;
+}
+
+StatusBar {
+    height: 1;
+    background: $surface;
+    padding: 0 1;
+    color: $text;
+}
+
+ChatView {
+    height: 1fr;
+    background: $background;
+    padding: 1 2;
+}
+
+.empty-heading {
+    text-align: center;
+    margin-top: 4;
+    text-style: bold;
+    color: $text-muted;
+}
+
+.empty-body {
+    text-align: center;
+    color: $text-muted;
+}
+
+InputPanel {
+    height: 5;
+    background: $surface;
+    border: round $border;
+    padding: 0 1;
+}
+
+InputPanel:focus-within {
+    border: round $accent;
+}
+
+InputPanel TextArea {
+    height: 3;
+    background: $surface;
+    border: none;
+}
